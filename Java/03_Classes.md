@@ -1,4 +1,29 @@
-## 01. 메소드
+## 01. 클래스
+
+<br>   
+
+**객체**
+
++ 객체는 고유한 속성과 기능을 가지는 유일무이한 존재로서, 서로 다른 객체들과 상호작용한다.
++ 객체의 속성은 `필드(field)`를 통해 표현되며, 기능은 `메소드(method)`를 통해 구현된다.
++ 객체는 메소드를 통해 다른 객체와 상호작용하면서 프로그램 내에서 다양한 작업을 수행한다.
+
+<br>   
+<br>   
+
+**클래스**
+
+
++ 클래스는 동일한 요소를 가지는 객체들의 집합이며, 객체의 요소를 설계하는 템플릿이다.
++ 클래스에 기반하여 생성된 객체를 해당 클래스의 `인스턴스(instance)`라고 한다.
++ 프로그램의 일부에 문제가 발생했을 때, 문제가 되는 클래스만 수정하면 된다.
+
+<br>   
+<br>   
+<br>   
+<br>   
+
+## 02. 메소드
 
 <br>   
 
@@ -79,7 +104,7 @@ System.out.println(calc.sum(1, 2, 3, 4, 5));   // 15
 <br>   
 <br>   
 
-## 02. 생성자
+## 03. 생성자
 
 <br> 
 
@@ -164,7 +189,7 @@ Player p3 = new Player("유라", "몬드", 5);
 <br>   
 <br>   
 
-## 03. 접근 제어자
+## 04. 접근 제어자
 
 <br>   
 
@@ -215,4 +240,58 @@ class D extends A {
 <br>   
 <br>   
 <br>   
+<br>   
+<br>   
 
+## 05. static
+
+<br>   
+
+```java
+class Player {
+
+    // 정적 필드
+    static int count = 0;
+
+    // 인스턴스 필드
+    int salary;
+
+    Player(int salary) {
+        this.salary = salary;
+        count++; 
+    }
+
+}
+```
+
+<br>   
+
+```java
+System.out.println(Player.count);  // 0
+
+Player p1 = new Player(300);
+Player p2 = new Player(200);
+
+System.out.println(p1.count);      // 2
+System.out.println(p2.count);      // 2
+
+System.out.println(p1.salary);     // 300
+System.out.println(p2.salary);     // 200
+```
+
+<br>   
+
++ 정적 멤버는 static 키워드가 붙어 있는 멤버다.
++ 정적 멤버는 클래스 자체에 속하기 때문에, 모든 객체들이 공유한다.
++ 객체를 생성하지 않아도 정적 멤버를 사용할 수 있다.
++ 정적 메소드에서는 인스턴스 멤버, this 키워드를 사용할 수 없다.
+
+<br>   
+
++ 인스턴스 멤버는 static 키워드가 없는 멤버다.
++ 인스턴스 멤버는 각각의 객체에 속하며, 객체마다 개별적으로 갖고 있다.
++ 객체를 생성해야만 인스턴스 멤버를 사용할 수 있다.
++ 인스턴스 메소드에서는 정적 멤버와 인스턴스 멤버 모두 사용할 수 있다.
+
+<br>   
+<br>   
