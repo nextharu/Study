@@ -27,8 +27,8 @@ class Person {
 Person p = new Person();
 
 p.introduce();               // 안녕하세요. 저는 사람입니다.
-p.introduce("최진우");        // 안녕하세요. 저는 최진우입니다.
-p.introduce("최진우", 30);    // 안녕하세요. 저는 30세 최진우입니다.
+p.introduce("김진우");        // 안녕하세요. 저는 김진우입니다.
+p.introduce("김진우", 30);    // 안녕하세요. 저는 30세 김진우입니다.
 ```
 
 <br>   
@@ -120,9 +120,14 @@ class Person {
 **같은 클래스의 다른 생성자 호출하기**
 ```java
 class Player {
+
+    // 필드
+
     String name;
     String city;
     int grade;
+
+    // 생성자
 
     Player(String name) {
         this(name, "무소속", 4);
@@ -152,3 +157,62 @@ Player p3 = new Player("유라", "몬드", 5);
 
 + this( ) 메소드를 활용하면 생성자들 간의 코드 중복을 줄일 수 있다.
 + this( ) 메소드는 생성자의 첫 번째 줄에서만 가능하다.
+
+<br>   
+<br>   
+<br>   
+<br>   
+<br>   
+
+## 03. 접근 제어자
+
+<br>   
+
+```java
+package p1;
+
+public class A {
+
+    public int publicVar; 
+    protected int protectedVar; 
+    int defaultVar;
+    private int privateVar;
+
+    // 해당 클래스
+    // 접근 가능 : publicVar, protectedVar, defaultVar, privateVar
+}
+
+
+class B {
+    // 같은 패키지의 다른 클래스
+    // 접근 가능 : publicVar, protectedVar, defaultVar
+}
+```
+
+<br>   
+
+```java
+package p2;
+
+class C {
+    // 다른 패키지의 다른 클래스
+    // 접근 가능 : publicVar
+}
+
+class D extends A {
+    // 다른 패키지의 자식 클래스
+    // 접근 가능 : publicVar, protectedVar
+}
+```
+
+<br>   
+
++ private : 해당 클래스에서만 접근 가능
++ default : 같은 패키지의 모든 클래스에서 접근 가능
++ protected : 같은 패키지의 모든 클래스, 다른 패키지의 자식 클래스에서 접근 가능
++ public : 모든 클래스에서 접근 가능
+
+<br>   
+<br>   
+<br>   
+
